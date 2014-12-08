@@ -27,6 +27,8 @@ The following Python libraries are required to run this code:
 3. PySide
 4. Matplotlib
 
+To run the web-app the libraries Flask and Flask_Bootstrap are also required along with access to Bootstrap itself.
+
 All of these libraries are freely available for download.
 
 After running the code, simply enter the desired zip code to see the schools
