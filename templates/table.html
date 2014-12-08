@@ -1,0 +1,66 @@
+{% extends "bootstrap/base.html" %}
+<html>
+
+    {%block head%}
+    <head>
+        <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <style>
+            body{
+                background-image:url(http://timedotcom.files.wordpress.com/2014/10/map-of-america.jpg?w=1100);
+                background-size: cover;
+            }
+            table {
+                color:black;
+                position: absolute;
+                vertical-align:middle;
+                opacity:1;
+                top:20%;
+                left:25%;
+                margin-left:-175px;
+                margin-top:-100px;
+            }
+            h2{
+                color:@brand-primary;
+                vertical-align:middle;
+            }
+        </style>
+    </head>
+    {%endblock%}
+    <body>
+        {% block content %}
+        <h2>Results: </h2>
+        <table border = "1" class="table table-striped table-bordered table-condensed">
+        {% for i in range(n+2) %}
+            {% if i == 0 %}
+                <tr>
+                    <th>{{output[i][0]}}</th>
+                    <th>{{output[i][1]}}</th>
+                    <th>{{output[i][2]}}</th>
+                    <th>{{output[i][3]}}(%)</th>
+                </tr>
+            {%elif i == n+1 %}
+                <tr>
+                    <th>Zip Average</th>
+                    <td> </td>
+                    <td>{{score_average}}</td>
+                    <td>{{dev_average}}%</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>{{output[i][0]}}</td>
+                    <td>{{output[i][1]}}</td>
+                    <td>{{output[i][2]}}</td>
+                    <td>{{output[i][3]}}%</td>
+            {% endif %}
+                </tr>
+        {% endfor %}
+        </table>
+
+        <!--<form>
+        <input type="radio" name="plot" value="male" action = >Show Plot
+        </form>-->
+
+        <a class="btn btn-primary" href="{{home}}" role="button">Search Again</a>
+        {% endblock %}
+    </Body>
+</HTML>

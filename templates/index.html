@@ -1,0 +1,65 @@
+{% extends "bootstrap/base.html" %}
+
+<html>
+
+    {%block head%}
+    <head>
+        <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <style>
+            body{
+                background-image:url(http://timedotcom.files.wordpress.com/2014/10/map-of-america.jpg?w=1100);
+                background-size: cover;
+            }
+            #start {
+                color:black;
+                position: absolute;
+                top:50%;
+                left:50%;
+                margin-left:-175px;
+                margin-top:-100px;
+            }
+            form {
+                color:blue;
+                position: absolute;
+                top:50%;
+                left:50%;
+                margin-left:10px;
+                margin-top:-100px;
+            }
+            #intro{
+                color:black;
+                position: absolute;
+                margin-left:100px;
+                margin-top:50px;
+            }
+            h2{
+                color:black;
+                vertical-align:middle;
+                margin-left:100px;
+            }
+            .round{
+                border-radius:5px
+            }
+        </style>
+        <!--<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+    </head>
+    {%endblock%}
+    {%block body%}
+    <body>
+        <div class="round">
+        <h2 class="bg-primary">
+            A Presentation of Public Schools' Performances by Zip Code
+        </h2>
+        </div>
+        <div class="round">
+            <p id="intro" class="bg-success">
+                Welcome to this web-app! Using data from the U.S. Department of Education, I present a list of schools(along with a summary of their students' performance in standardized testing) based on your desired zip code. More notes on the code and a desktop version of this app with the same functionality is available <a href="https://github.com/hvdasarathy">here.</a>
+                Please enter your desired zip code below to proceed.
+            </p>
+        </div>
+        <p id="start" class="bg-primary">Enter your desired zip code:
+        <form method="POST" action="{{results}}"><input name="zip" /><input type="submit" value="Go!" /></form>
+        </p>
+        {%endblock%}
+    </body>
+</html>

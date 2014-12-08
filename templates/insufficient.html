@@ -1,0 +1,11 @@
+{% extends "bootstrap/base.html" %}
+
+<HTML>
+    {% block content %}
+    <Body>
+        <p>Oops! There isn't sufficient data for this zip code! </p>
+        <p>However, the state mean for {{state}} is {{state_mean}}. </p>
+        <a href= "{{home}}">Return to Search</a>
+    </Body>
+    {% endblock %}
+</HTML>
